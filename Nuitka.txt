@@ -1,0 +1,40 @@
+
+python -m pip install -U Nuitka
+python -m nuitka try.py
+
+
+
+python -m nuitka --standalone face_registration_api.py
+
+
+pyarmor gen -r -O ./dist_obf face_registration_api.py main.py src/
+
+. Copy Your Data Files 📁
+Your code is looking for src\embedding_dir\face_embeddings.pkl. You need to recreate this structure inside dist_obf.
+
+Manually copy the embedding_dir folder (which contains your .pkl file) from your src folder into the dist_obf\src folder
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________
+ALL .py FiLE ENCRYPTION
+pyarmor gen -r -O ./dist_obf --bind-data "src/embedding_dir/face_embeddings.pkl" face_registration_api.py main.py src/
+copy the .pkl file in dist_obj/src/embedding
+
+
+
+
+
+
+conda create -n py311_env python=3.11
+conda activate py311_env
+pip install nuitka==2.1.5
+python -m nuitka --onefile --output-dir="dist/final_app" --include-data-files="src/embedding_dir/face_embeddings.pkl=embedding_dir/face_embeddings.pkl" --include-data-files="src/embedding_dir/cctv_embeddings.pkl=embedding_dir/cctv_embeddings.pkl" dist_obf/face_registration_api.py

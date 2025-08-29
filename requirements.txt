@@ -1,0 +1,14 @@
+opencv-python # Version: 4.11.0.86
+torch         # Version: 2.7.0
+facenet-pytorch  # Version: 2.6.0
+scipy         # Version: 1.15.3
+flask
+flask_cors
+pandas
+tensorflow==2.15.0
+torch==2.7.1
+torchvision==0.22.1
+kafka-python
+fastapi
+av
+##python  3.10.0
